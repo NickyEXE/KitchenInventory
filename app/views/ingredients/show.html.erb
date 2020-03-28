@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Back to Pantry', ingredients_path %>
+
+<div class="ingredient-show">
+
+<div class="name">
+  <%= @ingredient.name %>
+</div>
+
+<p>
+  <%= @ingredient.print_kind %>
+</p>
+
+<div class="quantity">
+  <strong>Current Stock:</strong> <%= @ingredient.quantity %> <%= @ingredient.container %>
+</div>
+
+  <% if @ingredient.perishable%>
+    <p class="perishable">Perishable!!!
+    </p>
+  <% end%>
+</div>
+
+<div class="cards">
+
+<% @recipes.each do |recipe|%>
+  <div class="card">
+    <%=link_to (image_tag recipe.thumbnail), recipe.url%> 
+    <h1><%= recipe.name %></h1>
+    <h2><%= recipe.byline %></h2>
+    <h3><%= recipe.cooking_time %></h3>
+  </div>
+<% end%>
+</div>
+

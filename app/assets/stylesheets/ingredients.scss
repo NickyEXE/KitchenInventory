@@ -1,0 +1,62 @@
+// Place all the styles related to the ingredients controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.ingredient-show{
+    text-align: center;
+}
+
+.ingredient-show > .name {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+.ingredient-show > .quantity{
+
+}
+.ingredient-show > .perishable{
+    color: red;
+    font-weight: bold
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    height: 278px;
+    margin-bottom: 22px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    border: black;
+    border-style: solid;
+    border-width: thin;
+    padding: 1em;
+}
+
+.card > img {
+    justify-content: center;
+}
+
+.card > h1 {
+    font-size: 1.25em;
+    margin-bottom: 0px;
+    text-align: left;
+}
+
+.card > h2 {
+    font-size: 1.1em;
+    font-weight: normal;
+    margin-top: 0px;
+    text-align: left;
+}
+
+.card > h3 {
+    font-size: .9em;
+    font-weight: 500;
+    text-align: right;
+    color: slategrey
+}
