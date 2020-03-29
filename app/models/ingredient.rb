@@ -36,4 +36,18 @@ class Ingredient < ApplicationRecord
             end
         end
     end
+
+    def self.suggest_recipes
+        url = URI("https://api.spoonacular.com/recipes/findByIngredients?ingredients=#{self.pluck(:name).join(",")}&number=40&ranking=2&ignorePantry=false&apiKey=7e4a41eab9ff42abb3f341df5e2571f4")
+        http = Net::HTTP.new(url.host, url.port)
+        http.use_ssl = true
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        request = Net::HTTP::Get.new(url)
+        request["cookie"] = '__cfduid=dc9db697c8414ffabb2b8fec54c397c5b1585432169'
+        request["content-type"] = 'application/json'
+        response = http.request(request)
+        return JSON.parse(response.read_body)
+    end
+
+
 end
